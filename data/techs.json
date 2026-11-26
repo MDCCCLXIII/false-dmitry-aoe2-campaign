@@ -1,0 +1,62 @@
+{
+  "version": 3,
+  "mission_scope": "01-cherez-granitsu",
+  "techs": [
+    {
+      "id": "tsarevich",
+      "name_ru": "Царевич",
+      "cost": {"food": 400, "wood": 0, "gold": 300, "stone": 0},
+      "research_time_sec": 45,
+      "age": "castle",
+      "researched_at": "town_center (острог Моравска, затем лагерь)",
+      "available_from": "после взятия Моравска (флаг M1_MoravskDone); бесплатной выдачи нет",
+      "unique": true,
+      "hp": null,
+      "attack": null,
+      "armor": null,
+      "effects": [
+        {"target": "chernets", "stat": "conversion_range", "change": "+3", "note": "native-дальность конверсии одиночных юнитов"},
+        {"target": "chernets", "stat": "city_reading_delay", "change": "x0.6 (-40%)", "implementation": "флаг M1_TsarevichOn: задержки чтения 15/20/25 с становятся 9/12/15 с"}
+      ],
+      "description": "Имя царевича бежит впереди войска. Слух о чудесно спасённом сыне Грозного убеждает быстрее: чернецы читают грамоту короче, горожане открывают ворота раньше.",
+      "notes": ["[ПРОВЕРИТЬ: исторически оправданное название и описание; допустимо как игровая условность]",
+                "Технология «Польский контракт» относится к миссии 2 и в этот файл не включена."]
+    },
+    {
+      "id": "bribe_chernigov",
+      "name_ru": "Кошель для Чернигова",
+      "cost": {"food": 0, "wood": 0, "gold": 600, "stone": 0},
+      "research_time_sec": 10,
+      "age": "castle",
+      "researched_at": "town_center P1 в Моравске",
+      "available_from": "T_Mor_Flip; закрывается при T_Che_PosadFlip",
+      "unique": true,
+      "hp": null,
+      "attack": null,
+      "armor": null,
+      "effects": [
+        {"target": "mission", "stat": "flag M1_BribePaid_Che", "change": "ставится при исследовании; посад переходит через 5 с после появления любого юнита P1 в Z_Conv_Che"}
+      ],
+      "description": "Технология-кнопка оплаты. Золото уходит нужным людям в посаде, ворота открываются без чернеца. Дороже конверсии, но быстрее. Замок Чернигова подкупом не берётся. Добровольцев (слухи) при подкупе вдвое меньше.",
+      "notes": ["[ПРОВЕРИТЬ: игровая условность]"]
+    },
+    {
+      "id": "bribe_putivl",
+      "name_ru": "Кошель для Путивля",
+      "cost": {"food": 0, "wood": 0, "gold": 900, "stone": 0},
+      "research_time_sec": 10,
+      "age": "castle",
+      "researched_at": "OBJ_CampTC (лагерь)",
+      "available_from": "T_CampCheck; закрывается при T_Putivl_Flip или T_Putivl_Force",
+      "unique": true,
+      "hp": null,
+      "attack": null,
+      "armor": null,
+      "effects": [
+        {"target": "mission", "stat": "flag M1_BribePaid_Put", "change": "ставится при исследовании; Путивль переходит через 5 с после появления любого юнита P1 в Z_Conv_Put"}
+      ],
+      "description": "Технология-кнопка оплаты. Путивль переходит без чернеца, но казна города не выдаётся, а добровольцев приходит вдвое меньше. Цена не растёт после T_Putivl_Toughen.",
+      "notes": ["[ПРОВЕРИТЬ: игровая условность; исторически сдача связана с передачей казны Сутуповым]"]
+    }
+  ]
+}

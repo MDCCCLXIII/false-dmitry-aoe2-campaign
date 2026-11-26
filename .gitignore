@@ -1,0 +1,9 @@
+build/
+.venv/
+__pycache__/
+*.pyc
+.claude/settings.local.json
+error_file.txt
+build/screens/
+build/preview/
+build/audio_test/
